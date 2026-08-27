@@ -1,300 +1,284 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-
-
-<!-- Mirrored from frenify.com/envato/marketify/html/arlo/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2019 16:19:27 GMT -->
+<html lang="en">
 <head>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136961317-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-136961317-1');
-</script>
-
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<meta name="description" content="Name of your web site">
-<meta name="author" content="Marketify">
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>VR Industrial Training — Taha Rizvi</title>
+<meta name="description" content="VR Industrial Training at realworld one GmbH — multiplayer Unreal Engine VR training software with a signature mirroring system, built for pharmaceutical and industrial clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0b;
+    --bg-2:#111111;
+    --surface:#171717;
+    --border:#2a2a2a;
+    --text:#f2f2f2;
+    --text-2:#a3a3a3;
+    --text-muted:#6f6f6f;
+    --accent:#FFB454;
+    --accent-light:#FFCB84;
+    --accent-dark:#C9863A;
+    --maxw:1140px;
+    --radius:8px;
+    --sans:'Inter','Segoe UI',Arial,sans-serif;
+    --display:'Space Grotesk','Inter','Segoe UI',Arial,sans-serif;
+    --mono:'JetBrains Mono','Courier New',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;font-size:15.5px;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-0.01em;color:var(--text);}
+  ::selection{background:var(--accent-dark);color:#0b0b0b;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 
-<title>Taha Rizvi</title>
+  .eyebrow{
+    font-size:11.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  }
+  .eyebrow::before{content:"";width:20px;height:1px;background:var(--accent-dark);display:inline-block;}
+  .mono{font-family:var(--mono);}
 
-<!-- STYLES -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-	
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/plugins.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
-	
-	
-<!-- /STYLES -->
+  /* ---- nav ---- */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  .navbar{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:0.02em;color:var(--text);}
+  nav.primary-nav ul{display:flex;gap:32px;}
+  nav.primary-nav a{font-size:13px;color:var(--text-2);transition:color .15s;padding:4px 0;}
+  nav.primary-nav a:hover{color:var(--text);}
+  .cv-btn{
+    font-size:12.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+    padding:9px 16px;border:1px solid var(--accent-dark);border-radius:4px;color:var(--accent-light);
+    transition:background .15s,color .15s;white-space:nowrap;
+  }
+  .cv-btn:hover{background:var(--accent);color:#0b0b0b;}
+  .menu-toggle{display:none;background:none;border:1px solid var(--border);border-radius:4px;color:var(--text);width:38px;height:38px;font-size:16px;}
+  .navright{display:flex;align-items:center;gap:18px;}
+  @media(max-width:860px){
+    nav.primary-nav{display:none;}
+    .menu-toggle{display:block;}
+  }
+  #mobileNav{display:none;border-top:1px solid var(--border);background:var(--bg-2);}
+  #mobileNav.open{display:block;}
+  #mobileNav ul{display:flex;flex-direction:column;padding:10px 32px 16px;gap:2px;}
+  #mobileNav a{display:block;padding:9px 0;font-size:14px;color:var(--text-2);border-bottom:1px solid var(--border);}
+  #mobileNav a:last-child{border-bottom:none;}
 
-	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
-	
-	
+  /* ---- breadcrumb ---- */
+  .breadcrumb{padding:24px 0 0;}
+  .back-link{font-family:var(--mono);font-size:12.5px;color:var(--text-2);display:inline-flex;align-items:center;gap:6px;transition:color .15s;}
+  .back-link:hover{color:var(--accent-light);}
+
+  /* ---- project hero ---- */
+  .p-hero{padding:20px 0 40px;border-bottom:1px solid var(--border);}
+  .p-hero h1{font-size:34px;line-height:1.15;margin-bottom:10px;}
+  .p-meta{display:flex;flex-wrap:wrap;gap:18px;color:var(--text-2);font-size:13.5px;margin-bottom:20px;}
+  .p-meta span{display:flex;align-items:center;gap:6px;}
+  .p-meta b{color:var(--text);font-weight:600;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+  .tags span{font-family:var(--mono);font-size:12px;color:var(--text-2);border:1px solid var(--border);padding:5px 12px;border-radius:4px;}
+  .p-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;padding:11px 20px;border-radius:4px;border:1px solid var(--border);transition:.15s;}
+  .btn-primary{background:var(--accent);color:#0b0b0b;border-color:var(--accent);}
+  .btn-primary:hover{background:var(--accent-light);}
+  .btn-outline{color:var(--text);border-color:var(--border);}
+  .btn-outline:hover{border-color:var(--text-2);}
+
+  /* ---- media frame ---- */
+  .media-section{padding:40px 0 0;}
+  .frame-box{padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);margin-bottom:16px;}
+  .frame-box .inner{border-radius:4px;overflow:hidden;background:#000;}
+  .frame-box iframe,.frame-box img{width:100%;display:block;border:0;}
+  .video-16x9{aspect-ratio:16/9;}
+  .media-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .media-row .frame-box{margin-bottom:0;}
+  .placeholder-media{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:
+      repeating-linear-gradient(135deg, var(--surface), var(--surface) 10px, #1c1c1c 10px, #1c1c1c 20px);
+    color:var(--text-muted);font-family:var(--mono);font-size:12.5px;text-align:center;padding:20px;border-radius:4px;}
+  @media(max-width:700px){.media-row{grid-template-columns:1fr;}}
+
+  /* ---- content sections ---- */
+  section.p-section{padding:44px 0;border-top:1px solid var(--border);}
+  .section-head{margin-bottom:24px;max-width:680px;}
+  .section-head h2{font-size:22px;margin-bottom:8px;}
+  .p-section p{color:var(--text-2);font-size:14.5px;max-width:760px;}
+  .bullet-list{display:grid;gap:11px;max-width:760px;}
+  .bullet-list li{display:flex;gap:12px;font-size:14.5px;color:var(--text-2);line-height:1.55;}
+  .bullet-list li::before{content:"";width:5px;height:5px;margin-top:8px;background:var(--accent-dark);flex:none;border-radius:1px;}
+  .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;max-width:760px;}
+  .spec-grid div{background:var(--surface);padding:16px 18px;}
+  .spec-grid .k{font-family:var(--mono);font-size:10.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;}
+  .spec-grid .v{font-size:13.5px;color:var(--text);}
+  @media(max-width:700px){.spec-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.spec-grid{grid-template-columns:1fr;}}
+  .impact-box{background:var(--surface);border:1px solid var(--accent-dark);border-radius:var(--radius);padding:20px 24px;max-width:760px;}
+  .impact-box .eyebrow{margin-bottom:8px;}
+  .impact-box p{color:var(--text);font-size:14.5px;}
+
+  /* ---- gallery ---- */
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:700px){.gallery-grid{grid-template-columns:1fr;}}
+
+  /* ---- prev/next + cta ---- */
+  .p-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:32px 0;border-top:1px solid var(--border);}
+  .p-nav a{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;transition:border-color .15s;}
+  .p-nav a:hover{border-color:var(--accent-dark);}
+  .p-nav .dir{font-family:var(--mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;}
+  .p-nav .next-wrap{text-align:right;}
+  .p-nav .title{font-size:14.5px;color:var(--text);font-weight:600;}
+  @media(max-width:600px){.p-nav{grid-template-columns:1fr;}.p-nav .next-wrap{text-align:left;}}
+
+  .cta-section{padding:48px 0;border-top:1px solid var(--border);text-align:center;}
+  .cta-section h2{font-size:22px;margin-bottom:10px;}
+  .cta-section p{color:var(--text-2);font-size:14.5px;max-width:480px;margin:0 auto 22px;}
+  .cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+  footer{border-top:1px solid var(--border);padding:22px 0;}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--text-muted);flex-wrap:wrap;gap:12px;max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .foot-social{display:flex;gap:16px;}
+  .foot-social a{color:var(--text-2);transition:color .15s;}
+  .foot-social a:hover{color:var(--accent-light);}
+
+  @media(max-width:600px){
+    .wrap,.navbar,.foot-row{padding-left:20px;padding-right:20px;}
+    .p-hero h1{font-size:27px;}
+    section.p-section{padding:32px 0;}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+</style>
 </head>
-
 <body>
 
-<!-- WRAPPER ALL -->
-<div class="arlo_tm_wrapper_all">
+<header>
+  <div class="navbar">
+    <a href="index.html#home" class="brand">Taha Rizvi</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="navright">
+      <a class="cv-btn" href="img/cv/Taha's_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+  <div id="mobileNav">
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-	<div id="arlo_tm_popup_blog">
-		<div class="container">
-			<div class="inner_popup scrollable"></div>
-		</div>
-		<span class="close"><a href="#"></a></span>
-	</div>
-	
-	<!-- PRELOADER --
-	<div class="arlo_tm_preloader">
-		<div class="spinner_wrap">
-			<div class="spinner"></div>
-		</div>
-	</div>
-	<!-- /PRELOADER -->
-	
-	<!-- MOBILE MENU -->
-	<div class="arlo_tm_mobile_header_wrap">
-		<div class="main_wrap">
-			<div class="logo">
-				<img src="img/logo/mobile_logo.png" alt="" />
-			</div>
-			<div class="arlo_tm_trigger">
-				<div class="hamburger hamburger--collapse-r">
-					<div class="hamburger-box">
-						<div class="hamburger-inner"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="arlo_tm_mobile_menu_wrap">
-   			<div class="mob_menu">
-				<ul class="anchor_nav">
-					<li><a href="index.html#home">Home</a></li>
-					<li><a href="index.html#portfolio">Portfolio</a></li>
-					<li><a href="index.html#skills">Skills</a></li>
-					<li><a href="index.html#about">About</a></li>
-					<li><a href="index.html#education">Education</a></li>				
-					<li><a href="index.html#contact">Contact</a></li>
-					
-					<br><br>
-						<li><a href="img/cv/Taha's_CV.pdf" target="_blank"><span style="background-color:#788F9B;"><b>Download CV</b></span></a></li>
-					
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- /MOBILE MENU -->
-	
-    <!-- CONTENT -->
-	<div class="arlo_tm_content">
-		
-		<!-- LEFTPART -->
-		<div class="arlo_tm_leftpart_wrap">
-			<div class="leftpart_inner">
-				<div class="logo_wrap">
-					<a href="index.html#home"><img src="img/logo/desktop-logo.png" alt="" /></a>
-				</div>
-				<div class="menu_list_wrap">
-					<ul class="anchor_nav">
-					<li><a href="index.html#home">Home</a></li>
-					<li><a href="index.html#portfolio">Portfolio</a></li>
-					<li><a href="index.html#skills">Skills</a></li>
-					<li><a href="index.html#about">About</a></li>
-					<li><a href="index.html#education">Education</a></li>				
-					<li><a href="index.html#contact">Contact</a></li>
-						
-						<br><br>
-						<li><a href="img/cv/Taha's_CV.pdf" target="_blank"><span style="background-color:#788F9B;"><b>Download CV</b></span></a></li>
-						
-					</ul>
-					</div>
-					
-					
-											
-										
-					
-				
-				<div class="leftpart_bottom">
-					<div class="social_wrap">
-						<ul>
-							<li><a href="https://www.facebook.com/taha.hsn" target="_blank"><i class="xcon-facebook"></i></a></li>			
-							<li><a href="https://pk.linkedin.com/in/taha-rizvi" target="_blank"><i class="xcon-linkedin"></i></a></li>
-							<li><a href="https://github.com/taha110" target="_blank"><i class="fab fa-github"></i></a></li>
-							<li><a href="https://steamcommunity.com/id/T-Riz/" target="_blank"><i class="fab fa-steam "></i></a></li>
-							<li><a href="https://www.youtube.com/channel/UCb-6agWiEpo6WIYO1YL7_WA" target="_blank"><i class="fab fa-youtube"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<a class="arlo_tm_resize" href="#"><i class="xcon-angle-left"></i></a>
-			</div>
-		</div>
-		<!-- /LEFTPART -->
-		
+<main>
+  <div class="breadcrumb wrap"><a class="back-link" href="index.html#projects">&larr; All projects</a></div>
 
-		
-		<!-- RIGHTPART -->
-		<div class="arlo_tm_rightpart">
-			<div class="rightpart_inner">
-				<div class="arlo_tm_portfolio_single_wrap">
-					<div class="container">
-						<div class="title_holder">
-							<h3><b>RW1 IKA project</b></h3>
-						</div>
-						
-						
-						
+  <section class="p-hero">
+    <div class="wrap">
+      <div class="eyebrow">VR</div>
+      <h1>VR Industrial Training</h1>
+      <div class="p-meta"><span><b>Role</b>&nbsp;Unreal Engine Programmer</span><span><b>Company</b>&nbsp;realworld one GmbH</span><span><b>Engine</b>&nbsp;Unreal Engine 4</span></div>
+      <div class="tags"><span>Unreal Engine 4</span><span>C++</span><span>Blueprints</span><span>Multiplayer</span><span>VR</span></div>
+      <div class="p-actions"> <a class="btn btn-outline" href="index.html#projects">All projects</a></div>
+    </div>
+  </section>
 
-						<iframe style="float:right;padding-left: 50%;clear: none; padding: 0; padding-left: 2%;padding-bottom: 2%" width="50%" height="400" src="https://www.youtube.com/embed/jBxe7Y4xaOY" title="The IKA ROTAVISC Series in VR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						
-						<div>
-							<div class="name_holder">
-									<h3><b>Project Details</b></h3>
-								</div>
-								<br>
-								<div class="short_list">
-									<ul>
-										
-										<li>
-											<span class="first">Release</span>
-											<span class="second"> : 01.03.2022 </span>
-										</li>
-										<br>
-										<span class="first"><h5><b>Abstract :</b></h5></span>
-											<span class="second">At RW1 we developed state-of-the-art virtual and augmented reality software solutions designed for the life sciences, analytical, diagnostics and medical, pharmaceutical, chemical and processing industries.
-												<br><br>
-												<h5><b><mark>My Responsibilities:</mark></b></h5>
-												<p>Following are the major responsibilities and contribution i made in this project: 
+  <section class="media-section">
+    <div class="wrap">
+      <div class="frame-box"><div class="inner video-16x9"><iframe src="https://www.youtube.com/embed/jBxe7Y4xaOY" title="VR Industrial Training" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+    </div>
+  </section>
 
-												</p> <br>
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Overview</div><h2>What it is</h2></div>
+      <p>Multiplayer VR training software built for life-sciences, pharmaceutical and process industries, letting up to 20 trainees join a shared session with roughly 120 interactable training items and a trainer-led mirroring workflow.</p>
+    </div>
+  </section>
 
-											
-												<li>USP of project: mirroring system. The mirroring system helps the trainer to explain to the trainee without going to the trainee table as the trainee can see everything on its own table using the mirroring function.
-												</li>
-											
-												<li>Creating interaction of all items to perform training.
-</li>
-												
-												<li>Multiplayer training where several users can connect simultaneously.
-</li>											
-												<li>Implementation of unique and realistic hand poses of each item.
-												</li>
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Role &amp; Contribution</div><h2>Unreal Engine Programmer, architecting the multiplayer interaction framework used across all training modules.</h2></div>
+      <ul class="bullet-list"><li>Designed and built the project's signature mirroring system, letting a trainer demonstrate a procedure once and mirror it live to every trainee's table &mdash; the product's core differentiator.</li><li>Architected the multiplayer session and item-interaction framework shared across all training modules.</li><li>Implemented realistic per-item hand poses and interaction logic for roughly 120 trainable objects.</li><li>Collaborated directly with TechArt, animation and 3D modelling teams to integrate new content into the framework.</li></ul>
+    </div>
+  </section>
 
-												<li>Interaction and collaboration with TechArt , Animation and 3D modelling teams.
-</li>
-												
-												
-												
-												<br>
-												<h5><b>Techinical Details:</b></h5> <br>
-												
-												<li>Game Engine: Unreal Engine 4</li>
-												
-												<li>Developed for PC VR (Oculus, vive and windows mixed reality). </li>
-												
-												<li>Used Blueprints and C++ both, as per our requirement.</li>
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Technical Details</div><h2>Stack &amp; specifications</h2></div>
+      <div class="spec-grid"><div><div class="k">Engine</div><div class="v">Unreal Engine 4</div></div><div><div class="k">Languages</div><div class="v">C++, Blueprints</div></div><div><div class="k">Platform</div><div class="v">PC VR &mdash; Oculus, Vive, WMR</div></div><div><div class="k">Session size</div><div class="v">Up to 20 trainees</div></div><div><div class="k">Content</div><div class="v">~120 interactable items</div></div><div><div class="k">Signature feature</div><div class="v">Live mirroring system</div></div></div>
+    </div>
+  </section>
 
-										
-												
-												
-												
-												<br>
-												<h6><b>Other Project Details:</b></h6> <br>
-												
-												<p>Training environment for IKA users to experience the training in VR to get to know and learn better. It's a multiplayer experience where upto 20 users can join and get trained. Mirroring system is the main feature of this experience. The is a main menu from where users can spawn or despawn items on their or everyone’s table, depending on mirroring feature status.
-													Trainer can spawn items on every table or just the opposite table depending on mirroring status.
-													There are around 120 items to spawn and assemble 
-													
-</p>
-												
-											
-												
-											</span>
-									</ul>
-								</div>
-						</div>
-					
-						<div class="details_wrap" style="float: left; margin: 0; padding: 0; clear: none;">
-							
-							<div class="leftbox" style="width: 100%;float: left; clear: none;">
-								
-								
-							</div>
-							<div class="rightbox">
-								
-								
-								
-							</div>
-						</div>
-						<div class="images_list">
-							<ul>
-								<li>
-									<img src="img/portfolio/rw1_screen_1.jpg" alt="" />
-								</li>
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Impact</div><h2>Result</h2></div>
+      <div class="impact-box"><p>Delivered a reusable VR training framework that was adopted across multiple client projects at the studio, becoming the foundation for later training titles.</p></div>
+    </div>
+  </section>
 
-								<li>
-									<img src="img/portfolio/rw1_screen_2.jpg" alt="" />
-								</li>
-								
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Showcase</div><h2>Screenshots</h2></div>
+      <div class="gallery-grid"><div class="frame-box"><div class="inner"><img src="img/portfolio/rw1_screen_1.jpg" alt="VR Industrial Training screenshot"></div></div><div class="frame-box"><div class="inner"><img src="img/portfolio/rw1_screen_2.jpg" alt="VR Industrial Training screenshot"></div></div></div>
+    </div>
+  </section>
 
-							</ul>
-						</div>
-						<div class="pagination_wrap">
-							<div class="prev">
-								<a href="#">Prev</a>
-							</div>
-							<div class="next">
-								<a href="#">Next</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				
-				<!-- CONTACT & FOOTER -->
-				<div class="arlo_tm_section" id="contact">
-					<div class="arlo_tm_footer_contact_wrapper_all">
-						<div class="arlo_tm_footer_wrap">
-							<div class="container">
-								<p>&copy; Copyright 2022. All Rights are Reserved.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /CONTACT & FOOTER -->
-				
-			</div>
-		</div>
-		<!-- /RIGHTPART -->
-		
-		<a class="arlo_tm_totop" href="#"></a> 
-		
-	</div>
-</div>
-<!-- / WRAPPER ALL -->
-	
-<!-- SCRIPTS -->
-<script src="js/jquery.js"></script>
-<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->	
-<script src="js/plugins.js"></script>
-<script src="js/init.js"></script>
-<!-- /SCRIPTS -->
+  <div class="wrap">
+    <div class="p-nav">
+      <a href="project_SR_virtual_football.html"><div class="dir">&larr; Previous</div><div class="title">Virtual Football</div></a>
+      <a href="project_aod.html" class="next-wrap"><div class="dir">Next &rarr;</div><div class="title">Area of Darkness (VR)</div></a>
+    </div>
+  </div>
 
+  <section class="cta-section">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center;">Open to Senior / Lead Roles</div>
+      <h2>Building a team like this?</h2>
+      <p>I'm looking for Senior or Lead Unreal Engine positions where I can own architecture, tooling and mentoring at this level.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="index.html#contact">Get in touch</a>
+        <a class="btn btn-outline" href="img/cv/Taha's_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-row">
+    <span>&copy; 2026 Taha Rizvi.</span>
+    <div class="foot-social">
+      <a href="https://github.com/taha110" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/taha-rizvi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:taha.hassan110@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  menuToggle.addEventListener('click', ()=>{
+    const open = mobileNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    mobileNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+  }));
+</script>
 </body>
-
-<!-- Mirrored from frenify.com/envato/marketify/html/arlo/1/portfolio-single-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2019 16:20:17 GMT -->
 </html>
