@@ -1,277 +1,278 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-
-
-<!-- Mirrored from frenify.com/envato/marketify/html/arlo/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2019 16:19:27 GMT -->
+<html lang="en">
 <head>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136961317-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-136961317-1');
-</script>
-
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<meta name="description" content="Name of your web site">
-<meta name="author" content="Marketify">
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Virtual Football — Taha Rizvi</title>
+<meta name="description" content="Virtual Football at Sportradar — a large-scale Unreal Engine 5 broadcast system generating 100,000+ videos from JSON match data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0b;
+    --bg-2:#111111;
+    --surface:#171717;
+    --border:#2a2a2a;
+    --text:#f2f2f2;
+    --text-2:#a3a3a3;
+    --text-muted:#6f6f6f;
+    --accent:#FFB454;
+    --accent-light:#FFCB84;
+    --accent-dark:#C9863A;
+    --maxw:1140px;
+    --radius:8px;
+    --sans:'Inter','Segoe UI',Arial,sans-serif;
+    --display:'Space Grotesk','Inter','Segoe UI',Arial,sans-serif;
+    --mono:'JetBrains Mono','Courier New',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;font-size:15.5px;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-0.01em;color:var(--text);}
+  ::selection{background:var(--accent-dark);color:#0b0b0b;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 
-<title>Taha Rizvi</title>
+  .eyebrow{
+    font-size:11.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  }
+  .eyebrow::before{content:"";width:20px;height:1px;background:var(--accent-dark);display:inline-block;}
+  .mono{font-family:var(--mono);}
 
-<!-- STYLES -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-	
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/plugins.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
-	
-	
-<!-- /STYLES -->
+  /* ---- nav ---- */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  .navbar{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:0.02em;color:var(--text);}
+  nav.primary-nav ul{display:flex;gap:32px;}
+  nav.primary-nav a{font-size:13px;color:var(--text-2);transition:color .15s;padding:4px 0;}
+  nav.primary-nav a:hover{color:var(--text);}
+  .cv-btn{
+    font-size:12.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+    padding:9px 16px;border:1px solid var(--accent-dark);border-radius:4px;color:var(--accent-light);
+    transition:background .15s,color .15s;white-space:nowrap;
+  }
+  .cv-btn:hover{background:var(--accent);color:#0b0b0b;}
+  .menu-toggle{display:none;background:none;border:1px solid var(--border);border-radius:4px;color:var(--text);width:38px;height:38px;font-size:16px;}
+  .navright{display:flex;align-items:center;gap:18px;}
+  @media(max-width:860px){
+    nav.primary-nav{display:none;}
+    .menu-toggle{display:block;}
+  }
+  #mobileNav{display:none;border-top:1px solid var(--border);background:var(--bg-2);}
+  #mobileNav.open{display:block;}
+  #mobileNav ul{display:flex;flex-direction:column;padding:10px 32px 16px;gap:2px;}
+  #mobileNav a{display:block;padding:9px 0;font-size:14px;color:var(--text-2);border-bottom:1px solid var(--border);}
+  #mobileNav a:last-child{border-bottom:none;}
 
-	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
-	
-	
+  /* ---- breadcrumb ---- */
+  .breadcrumb{padding:24px 0 0;}
+  .back-link{font-family:var(--mono);font-size:12.5px;color:var(--text-2);display:inline-flex;align-items:center;gap:6px;transition:color .15s;}
+  .back-link:hover{color:var(--accent-light);}
+
+  /* ---- project hero ---- */
+  .p-hero{padding:20px 0 40px;border-bottom:1px solid var(--border);}
+  .p-hero h1{font-size:34px;line-height:1.15;margin-bottom:10px;}
+  .p-meta{display:flex;flex-wrap:wrap;gap:18px;color:var(--text-2);font-size:13.5px;margin-bottom:20px;}
+  .p-meta span{display:flex;align-items:center;gap:6px;}
+  .p-meta b{color:var(--text);font-weight:600;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+  .tags span{font-family:var(--mono);font-size:12px;color:var(--text-2);border:1px solid var(--border);padding:5px 12px;border-radius:4px;}
+  .p-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;padding:11px 20px;border-radius:4px;border:1px solid var(--border);transition:.15s;}
+  .btn-primary{background:var(--accent);color:#0b0b0b;border-color:var(--accent);}
+  .btn-primary:hover{background:var(--accent-light);}
+  .btn-outline{color:var(--text);border-color:var(--border);}
+  .btn-outline:hover{border-color:var(--text-2);}
+
+  /* ---- media frame ---- */
+  .media-section{padding:40px 0 0;}
+  .frame-box{padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);margin-bottom:16px;}
+  .frame-box .inner{border-radius:4px;overflow:hidden;background:#000;}
+  .frame-box iframe,.frame-box img{width:100%;display:block;border:0;}
+  .video-16x9{aspect-ratio:16/9;}
+  .media-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .media-row .frame-box{margin-bottom:0;}
+  .placeholder-media{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:
+      repeating-linear-gradient(135deg, var(--surface), var(--surface) 10px, #1c1c1c 10px, #1c1c1c 20px);
+    color:var(--text-muted);font-family:var(--mono);font-size:12.5px;text-align:center;padding:20px;border-radius:4px;}
+  @media(max-width:700px){.media-row{grid-template-columns:1fr;}}
+
+  /* ---- content sections ---- */
+  section.p-section{padding:44px 0;border-top:1px solid var(--border);}
+  .section-head{margin-bottom:24px;max-width:680px;}
+  .section-head h2{font-size:22px;margin-bottom:8px;}
+  .p-section p{color:var(--text-2);font-size:14.5px;max-width:760px;}
+  .bullet-list{display:grid;gap:11px;max-width:760px;}
+  .bullet-list li{display:flex;gap:12px;font-size:14.5px;color:var(--text-2);line-height:1.55;}
+  .bullet-list li::before{content:"";width:5px;height:5px;margin-top:8px;background:var(--accent-dark);flex:none;border-radius:1px;}
+  .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;max-width:760px;}
+  .spec-grid div{background:var(--surface);padding:16px 18px;}
+  .spec-grid .k{font-family:var(--mono);font-size:10.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;}
+  .spec-grid .v{font-size:13.5px;color:var(--text);}
+  @media(max-width:700px){.spec-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.spec-grid{grid-template-columns:1fr;}}
+  .impact-box{background:var(--surface);border:1px solid var(--accent-dark);border-radius:var(--radius);padding:20px 24px;max-width:760px;}
+  .impact-box .eyebrow{margin-bottom:8px;}
+  .impact-box p{color:var(--text);font-size:14.5px;}
+
+  /* ---- gallery ---- */
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:700px){.gallery-grid{grid-template-columns:1fr;}}
+
+  /* ---- prev/next + cta ---- */
+  .p-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:32px 0;border-top:1px solid var(--border);}
+  .p-nav a{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;transition:border-color .15s;}
+  .p-nav a:hover{border-color:var(--accent-dark);}
+  .p-nav .dir{font-family:var(--mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;}
+  .p-nav .next-wrap{text-align:right;}
+  .p-nav .title{font-size:14.5px;color:var(--text);font-weight:600;}
+  @media(max-width:600px){.p-nav{grid-template-columns:1fr;}.p-nav .next-wrap{text-align:left;}}
+
+  .cta-section{padding:48px 0;border-top:1px solid var(--border);text-align:center;}
+  .cta-section h2{font-size:22px;margin-bottom:10px;}
+  .cta-section p{color:var(--text-2);font-size:14.5px;max-width:480px;margin:0 auto 22px;}
+  .cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+  footer{border-top:1px solid var(--border);padding:22px 0;}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--text-muted);flex-wrap:wrap;gap:12px;max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .foot-social{display:flex;gap:16px;}
+  .foot-social a{color:var(--text-2);transition:color .15s;}
+  .foot-social a:hover{color:var(--accent-light);}
+
+  @media(max-width:600px){
+    .wrap,.navbar,.foot-row{padding-left:20px;padding-right:20px;}
+    .p-hero h1{font-size:27px;}
+    section.p-section{padding:32px 0;}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+</style>
 </head>
-
 <body>
 
-<!-- WRAPPER ALL -->
-<div class="arlo_tm_wrapper_all">
+<header>
+  <div class="navbar">
+    <a href="index.html#home" class="brand">Taha Rizvi</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="navright">
+      <a class="cv-btn" href="img/cv/Taha's_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+  <div id="mobileNav">
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-	<div id="arlo_tm_popup_blog">
-		<div class="container">
-			<div class="inner_popup scrollable"></div>
-		</div>
-		<span class="close"><a href="#"></a></span>
-	</div>
-	
-	<!-- PRELOADER --
-	<div class="arlo_tm_preloader">
-		<div class="spinner_wrap">
-			<div class="spinner"></div>
-		</div>
-	</div>
-	<!-- /PRELOADER -->
-	
-	<!-- MOBILE MENU -->
-	<div class="arlo_tm_mobile_header_wrap">
-		<div class="main_wrap">
-			<div class="logo">
-				<img src="img/logo/mobile_logo.png" alt="" />
-			</div>
-			<div class="arlo_tm_trigger">
-				<div class="hamburger hamburger--collapse-r">
-					<div class="hamburger-box">
-						<div class="hamburger-inner"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="arlo_tm_mobile_menu_wrap">
-   			<div class="mob_menu">
-				<ul class="anchor_nav">
-					<li><a href="index.html#home">Home</a></li>
-					<li><a href="index.html#portfolio">Portfolio</a></li>
-					<li><a href="index.html#skills">Skills</a></li>
-					<li><a href="index.html#about">About</a></li>
-					<li><a href="index.html#education">Education</a></li>				
-					<li><a href="index.html#contact">Contact</a></li>
-					
-					<br><br>
-						<li><a href="img/cv/Taha's_CV.pdf" target="_blank"><span style="background-color:#788F9B;"><b>Download CV</b></span></a></li>
-					
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- /MOBILE MENU -->
-	
-    <!-- CONTENT -->
-	<div class="arlo_tm_content">
-		
-		<!-- LEFTPART -->
-		<div class="arlo_tm_leftpart_wrap">
-			<div class="leftpart_inner">
-				<div class="logo_wrap">
-					<a href="index.html#home"><img src="img/logo/desktop-logo.png" alt="" /></a>
-				</div>
-				<div class="menu_list_wrap">
-					<ul class="anchor_nav">
-					<li><a href="index.html#home">Home</a></li>
-					<li><a href="index.html#portfolio">Portfolio</a></li>
-					<li><a href="index.html#skills">Skills</a></li>
-					<li><a href="index.html#about">About</a></li>
-					<li><a href="index.html#education">Education</a></li>				
-					<li><a href="index.html#contact">Contact</a></li>
-						
-						<br><br>
-						<li><a href="img/cv/Taha's_CV.pdf" target="_blank"><span style="background-color:#788F9B;"><b>Download CV</b></span></a></li>
-						
-					</ul>
-					</div>
-					
-					
-											
-										
-					
-				
-				<div class="leftpart_bottom">
-					<div class="social_wrap">
-						<ul>
-							<li><a href="https://www.facebook.com/taha.hsn" target="_blank"><i class="xcon-facebook"></i></a></li>			
-							<li><a href="https://pk.linkedin.com/in/taha-rizvi" target="_blank"><i class="xcon-linkedin"></i></a></li>
-							<li><a href="https://github.com/taha110" target="_blank"><i class="fab fa-github"></i></a></li>
-							<li><a href="https://steamcommunity.com/id/T-Riz/" target="_blank"><i class="fab fa-steam "></i></a></li>
-							<li><a href="https://www.youtube.com/channel/UCb-6agWiEpo6WIYO1YL7_WA" target="_blank"><i class="fab fa-youtube"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<a class="arlo_tm_resize" href="#"><i class="xcon-angle-left"></i></a>
-			</div>
-		</div>
-		<!-- /LEFTPART -->
-		
+<main>
+  <div class="breadcrumb wrap"><a class="back-link" href="index.html#projects">&larr; All projects</a></div>
 
-		
-		<!-- RIGHTPART -->
-		<div class="arlo_tm_rightpart">
-			<div class="rightpart_inner">
-				<div class="arlo_tm_portfolio_single_wrap">
-					<div class="container">
-						<div class="title_holder">
-							<h3><b>Virtual Football - Sportradar</b></h3>
-                          <br>
-						</div>
-						
-						
-						
+  <section class="p-hero">
+    <div class="wrap">
+      <div class="eyebrow">Tools / Broadcast</div>
+      <h1>Virtual Football</h1>
+      <div class="p-meta"><span><b>Role</b>&nbsp;Senior Unreal Developer</span><span><b>Company</b>&nbsp;Sportradar AG</span><span><b>Engine</b>&nbsp;Unreal Engine 5</span></div>
+      <div class="tags"><span>UE5</span><span>C++</span><span>Sequencer</span><span>JSON Automation</span><span>SonarQube</span></div>
+      <div class="p-actions"><a class="btn btn-primary" href="https://virtualsports.sportradar.com/product/vwmf" target="_blank" rel="noopener">View live product</a> <a class="btn btn-outline" href="index.html#projects">All projects</a></div>
+    </div>
+  </section>
 
-						
-						
-						<div>
-							<div class="name_holder">
-                                                            <a href="https://virtualsports.sportradar.com/product/vwmf"><h3><b>Click here to view product</b></h3></a><br>
+  <section class="media-section">
+    <div class="wrap">
+      <div class="frame-box"><div class="inner placeholder-media">Live product &mdash; see link above<br>100,000+ generated broadcast videos</div></div>
+    </div>
+  </section>
 
-									<h3><b>Project Details</b></h3>
-								</div>
-								<br>
-								<div class="short_list">
-									<ul>
-										
-										<li>
-											<span class="first">Release</span>
-											<span class="second"> : 01.01.2024 </span>
-										</li>
-										<br>
-										<span class="first"><h5><b>Abstract :</b></h5></span>
-											<span class="second">At Sportradar creating virtual sports products for sport fans and betting. Producing videos out of json data and predefined animation sequences, compiling 100000+ videos in total with different outcomes.
-												<br><br>
-												<h5><b><mark>My Responsibilities:</mark></b></h5>
-												<p>Following are the major responsibilities and contribution i made in this project: 
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Overview</div><h2>What it is</h2></div>
+      <p>Sportradar's virtual football product generates broadcast-ready match videos for sports and betting audiences by combining real match JSON data with a library of pre-built cinematic sequences in Unreal Engine 5 &mdash; over 100,000 unique videos produced across roughly 1,250 sequences, each customized by league, cup and team.</p>
+    </div>
+  </section>
 
-												</p> <br>
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Role &amp; Contribution</div><h2>Senior Unreal Developer, owning editor tooling and pipeline architecture for the production team.</h2></div>
+      <ul class="bullet-list"><li>Engineered modular C++ editor tools adopted studio-wide, raising development velocity for the entire production team.</li><li>Designed the automation pipeline that iterates match JSON data and stitches individual cuts into complete broadcast sequences via console-driven generation.</li><li>Built dynamic transition and overlay systems &mdash; Halftime/Fulltime, goal overlays, offside and yellow-card events, replays, and in-stadium video ads.</li><li>Implemented overtime and penalty-shootout logic end to end.</li><li>Introduced SonarQube static analysis to actively manage technical debt across the codebase.</li><li>Mentored junior developers and technical artists on Unreal Engine best practice and tooling.</li></ul>
+    </div>
+  </section>
 
-											
-												  <li>Engineered modular editor tools in C++ to enhance development efficiency across the entire team using UE.</li>
-  <li>Implemented dynamic transition blends and overlays, including Halftime/Fulltime and Goal overlays.</li>
-  <li>Developed functionality for overtime and penalty shootouts.</li>
-  <li>Designed and integrated editor utility tools to optimize the development workflow.</li>
-  <li>Utilized Sonarqube to effectively mitigate technical debt.</li>
-  <li>Automated sequence generation through console commands using JSON data.</li>
-  <li>Provided guidance and mentorship to junior developers and tech artists.</li>
-  <li>Implemented new features such as Offsides and Yellow card.</li>
-  <li>Deployed video ad integration within the stadium environment along with replays integration.</li>
-												
-												
-												
-												<br>
-												<h5><b>Techinical Details:</b></h5> <br>
-												
-												<li>Game Engine: Unreal Engine 5</li>
-												
-												<li>Rendered 100,000+ videos. </li>
-												
-												<li>C++.</li>
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Technical Details</div><h2>Stack &amp; specifications</h2></div>
+      <div class="spec-grid"><div><div class="k">Engine</div><div class="v">Unreal Engine 5</div></div><div><div class="k">Language</div><div class="v">C++</div></div><div><div class="k">Output</div><div class="v">100,000+ videos</div></div><div><div class="k">Sequences</div><div class="v">~1,250</div></div><div><div class="k">Data</div><div class="v">JSON-driven</div></div><div><div class="k">QA</div><div class="v">SonarQube static analysis</div></div></div>
+    </div>
+  </section>
 
-										
-												
-												
-												
-												<br>
-												<h6><b>Other Project Details:</b></h6> <br>
-												
-												<p>Created a virtual football product with 100,000+ videos. We have set up different customization data for each league/cup team etc, and ~1250 sequences and json data for each sequence. We create a video based on the selected team and customization json match data. Usually it's a 90 sec video including different types of cuts. We iterate over json data and populate each cut and stitch it together in one sequence as shots in order to create a complete video.	
-</p>
-												
-											
-												
-											</span>
-									</ul>
-								</div>
-						</div>
-					
-						<div class="details_wrap" style="float: left; margin: 0; padding: 0; clear: none;">
-							
-							<div class="leftbox" style="width: 100%;float: left; clear: none;">
-								
-								
-							</div>
-							<div class="rightbox">
-								
-								
-								
-							</div>
-						</div>
-						
-						
-					</div>
-				</div>
-				
-				
-				<!-- CONTACT & FOOTER -->
-				<div class="arlo_tm_section" id="contact">
-					<div class="arlo_tm_footer_contact_wrapper_all">
-						<div class="arlo_tm_footer_wrap">
-							<div class="container">
-								<p>&copy; Copyright 2024. All Rights are Reserved.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /CONTACT & FOOTER -->
-				
-			</div>
-		</div>
-		<!-- /RIGHTPART -->
-		
-		<a class="arlo_tm_totop" href="#"></a> 
-		
-	</div>
-</div>
-<!-- / WRAPPER ALL -->
-	
-<!-- SCRIPTS -->
-<script src="js/jquery.js"></script>
-<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->	
-<script src="js/plugins.js"></script>
-<script src="js/init.js"></script>
-<!-- /SCRIPTS -->
+  <section class="p-section">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Impact</div><h2>Result</h2></div>
+      <div class="impact-box"><p>Reduced repetitive manual production work and shortened iteration time on new broadcast features, while scaling to a library of 100,000+ generated videos in live production.</p></div>
+    </div>
+  </section>
 
+
+  <div class="wrap">
+    <div class="p-nav">
+      <a href="project_SR_augmented_tennis.html"><div class="dir">&larr; Previous</div><div class="title">Augmented Tennis</div></a>
+      <a href="project_rw1_ika.html" class="next-wrap"><div class="dir">Next &rarr;</div><div class="title">VR Industrial Training</div></a>
+    </div>
+  </div>
+
+  <section class="cta-section">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center;">Open to Senior / Lead Roles</div>
+      <h2>Building a team like this?</h2>
+      <p>I'm looking for Senior or Lead Unreal Engine positions where I can own architecture, tooling and mentoring at this level.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="index.html#contact">Get in touch</a>
+        <a class="btn btn-outline" href="img/cv/Taha's_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-row">
+    <span>&copy; 2026 Taha Rizvi.</span>
+    <div class="foot-social">
+      <a href="https://github.com/taha110" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/taha-rizvi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:taha.hassan110@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  menuToggle.addEventListener('click', ()=>{
+    const open = mobileNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    mobileNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+  }));
+</script>
 </body>
-
-<!-- Mirrored from frenify.com/envato/marketify/html/arlo/1/portfolio-single-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2019 16:20:17 GMT -->
 </html>
