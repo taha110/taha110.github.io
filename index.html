@@ -1,780 +1,608 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-
-
-<!-- Mirrored from frenify.com/envato/marketify/html/arlo/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2019 16:19:27 GMT -->
+<html lang="en">
 <head>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136961317-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-136961317-1');
-</script>
-
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<meta name="description" content="Name of your web site">
-<meta name="author" content="Marketify">
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Taha Rizvi — Senior / Lead Unreal Engine Developer</title>
+<meta name="description" content="Taha Rizvi — Senior Unreal Engine Developer, 10+ years building gameplay systems, tools, VR and multiplayer applications with C++ and Unreal Engine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0b;
+    --bg-2:#111111;
+    --surface:#171717;
+    --border:#2a2a2a;
+    --text:#f2f2f2;
+    --text-2:#a3a3a3;
+    --text-muted:#6f6f6f;
+    --accent:#FFB454;
+    --accent-light:#FFCB84;
+    --accent-dark:#C9863A;
+    --maxw:1140px;
+    --radius:8px;
+    --sans:'Inter','Segoe UI',Arial,sans-serif;
+    --display:'Space Grotesk','Inter','Segoe UI',Arial,sans-serif;
+    --mono:'JetBrains Mono','Courier New',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;font-size:15.5px;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-0.01em;color:var(--text);}
+  ::selection{background:var(--accent-dark);color:#0b0b0b;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 
-<title>Taha Rizvi</title>
+  .eyebrow{
+    font-size:11.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  }
+  .eyebrow::before{content:"";width:20px;height:1px;background:var(--accent-dark);display:inline-block;}
+  .mono{font-family:var(--mono);}
 
-<!-- STYLES -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-	
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/plugins.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
-	
-	<style>
-#customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+  /* ---- nav ---- */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  .navbar{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:0.02em;color:var(--text);}
+  nav.primary-nav ul{display:flex;gap:32px;}
+  nav.primary-nav a{font-size:13px;color:var(--text-2);transition:color .15s;padding:4px 0;}
+  nav.primary-nav a:hover{color:var(--text);}
+  nav.primary-nav a.active{color:var(--accent-light);}
+  .cv-btn{
+    font-size:12.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+    padding:9px 16px;border:1px solid var(--accent-dark);border-radius:4px;color:var(--accent-light);
+    transition:background .15s,color .15s;white-space:nowrap;
+  }
+  .cv-btn:hover{background:var(--accent);color:#0b0b0b;}
+  .menu-toggle{display:none;background:none;border:1px solid var(--border);border-radius:4px;color:var(--text);width:38px;height:38px;font-size:16px;}
+  .navright{display:flex;align-items:center;gap:18px;}
+  @media(max-width:860px){
+    nav.primary-nav{display:none;}
+    .menu-toggle{display:block;}
+  }
+  #mobileNav{display:none;border-top:1px solid var(--border);background:var(--bg-2);}
+  #mobileNav.open{display:block;}
+  #mobileNav ul{display:flex;flex-direction:column;padding:10px 32px 16px;gap:2px;}
+  #mobileNav a{display:block;padding:9px 0;font-size:14px;color:var(--text-2);border-bottom:1px solid var(--border);}
+  #mobileNav a:last-child{border-bottom:none;}
 
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  color: #222222;
-}
+  /* ---- hero ---- */
+  .hero{padding:64px 0 44px;}
+  .hero-grid{display:grid;grid-template-columns:1fr 260px;gap:48px;align-items:center;}
+  .hero h1{font-size:38px;line-height:1.14;margin-bottom:16px;}
+  .hero h1 .role{display:block;font-size:13.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+  .hero-desc{font-size:16px;color:var(--text-2);max-width:480px;margin-bottom:24px;}
+  .hero-actions{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;padding:11px 20px;border-radius:4px;border:1px solid var(--border);transition:.15s;}
+  .btn-primary{background:var(--accent);color:#0b0b0b;border-color:var(--accent);}
+  .btn-primary:hover{background:var(--accent-light);}
+  .btn-outline{color:var(--text);border-color:var(--border);}
+  .btn-outline:hover{border-color:var(--text-2);}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{font-family:var(--mono);font-size:12px;color:var(--text-2);border:1px solid var(--border);padding:5px 12px;border-radius:4px;}
+  .hero-visual{position:relative;width:100%;max-width:260px;}
+  .hero-visual .frame{padding:6px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);}
+  .hero-visual img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;filter:grayscale(20%) contrast(1.05);}
+  .hero-visual .accent-line{position:absolute;top:-10px;left:-10px;width:40px;height:40px;border-top:2px solid var(--accent);border-left:2px solid var(--accent);}
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+  /* ---- career snapshot ---- */
+  .snapshot{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-2);}
+  .snapshot-grid{display:grid;grid-template-columns:repeat(5,1fr);}
+  .snap-item{padding:22px 16px;text-align:center;border-right:1px solid var(--border);}
+  .snap-item:last-child{border-right:none;}
+  .snap-item .num{font-family:var(--mono);font-size:19px;color:var(--accent-light);margin-bottom:4px;}
+  .snap-item .label{font-size:11px;color:var(--text-2);letter-spacing:0.02em;}
+  @media(max-width:760px){.snapshot-grid{grid-template-columns:repeat(2,1fr);}.snap-item{border-right:1px solid var(--border);border-bottom:1px solid var(--border);}}
 
-#customers tr:hover {background-color: #ddd;}
+  section{padding:64px 0;}
+  section.tight{padding:48px 0;}
+  .section-head{margin-bottom:32px;max-width:640px;}
+  .section-head h2{font-size:25px;margin-bottom:8px;}
+  .section-head p{color:var(--text-2);font-size:14.5px;}
 
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
-		
-#customers1 {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+  /* ---- about ---- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .about-grid p{color:var(--text-2);font-size:14.5px;margin-bottom:12px;}
+  .about-grid p strong{color:var(--text);font-weight:600;}
+  .philosophy-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .philosophy-grid div{background:var(--surface);padding:16px 18px;}
+  .philosophy-grid h4{font-size:13px;color:var(--accent-light);margin-bottom:5px;}
+  .philosophy-grid p{font-size:12.5px;color:var(--text-2);margin:0;}
 
-#customers1 td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  color: #222222;
-}
+  /* ---- skills & expertise (merged) ---- */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .sk-panel{background:var(--surface);padding:22px 22px;}
+  .sk-panel h3{font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:14px;}
+  .sk-panel ul{display:grid;gap:8px;}
+  .sk-panel li{font-family:var(--mono);font-size:13px;color:var(--text-2);display:flex;align-items:center;gap:9px;}
+  .sk-panel li::before{content:"";width:5px;height:5px;background:var(--accent-dark);flex:none;}
+  @media(max-width:860px){.skills-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.skills-grid{grid-template-columns:1fr;}}
 
-#customers1 tr:nth-child(even){background-color: #f2f2f2;}
+  /* ---- experience timeline ---- */
+  .role{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px;overflow:hidden;background:var(--surface);}
+  .role.current{border-color:var(--accent-dark);background:linear-gradient(180deg, rgba(255,180,84,0.06), transparent 40%), var(--surface);}
+  .role-head{padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--border);}
+  .role-head .when{font-family:var(--mono);font-size:11.5px;color:var(--accent-light);letter-spacing:0.03em;font-weight:500;margin-bottom:5px;}
+  .role-head h3{font-size:17px;margin-bottom:3px;}
+  .role-head .org{font-size:13.5px;color:var(--text-2);}
+  .role-head .tag-current{font-size:10.5px;text-transform:uppercase;letter-spacing:0.06em;color:#0b0b0b;background:var(--accent);padding:4px 10px;border-radius:100px;font-weight:700;height:fit-content;}
+  .role-body{padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .role-block h4{font-size:11px;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);margin-bottom:6px;}
+  .role-block p{font-size:13.5px;color:var(--text-2);}
+  .role-block.tech{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:7px;align-items:center;}
+  .role-block.tech h4{width:100%;}
+  .role-block.tech span{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--border);padding:4px 10px;border-radius:4px;}
+  @media(max-width:700px){.role-body{grid-template-columns:1fr;}}
 
-#customers1 tr:hover {background-color: #ddd;}
+  /* ---- projects ---- */
+  .filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+  .filter{font-size:12px;padding:7px 14px;border:1px solid var(--border);border-radius:100px;color:var(--text-2);background:none;transition:.15s;}
+  .filter.active,.filter:hover{color:var(--text);border-color:var(--accent-dark);}
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .p-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .15s,border-color .15s;text-align:left;color:var(--text);width:100%;}
+  .p-card:hover{transform:translateY(-3px);border-color:var(--accent-dark);}
+  .p-card-top{padding:18px 20px 0;display:flex;justify-content:space-between;align-items:center;}
+  .p-cat{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent-light);}
+  .p-card h3{font-size:17px;padding:10px 20px 6px;}
+  .p-card p.desc{font-size:13.5px;color:var(--text-2);padding:0 20px 14px;}
+  .p-card .tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 20px 16px;}
+  .p-card .tags span{font-family:var(--mono);font-size:10.5px;color:var(--text-2);border:1px solid var(--border);padding:3px 8px;border-radius:4px;}
+  .p-card .view{padding:12px 20px;border-top:1px solid var(--border);font-size:12px;color:var(--text-2);}
+  .p-card:hover .view{color:var(--accent-light);}
+  @media(max-width:760px){.proj-grid{grid-template-columns:1fr;}}
 
-#customers1 th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
+  /* ---- leadership ---- */
+  .lead-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .lead-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px;}
+  .lead-card h4{font-size:13.5px;margin-bottom:5px;color:var(--accent);}
+  .lead-card p{font-size:12.5px;color:var(--text-2);}
+  .lead-note{margin-top:24px;font-size:13px;color:var(--text-muted);border-left:2px solid var(--accent-dark);padding-left:14px;max-width:640px;}
+  @media(max-width:860px){.lead-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.lead-grid{grid-template-columns:1fr;}}
+
+  /* ---- contact ---- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .icon-row{display:flex;gap:10px;margin-top:20px;}
+  .icon-btn{width:38px;height:38px;border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--text-2);transition:.15s;}
+  .icon-btn:hover{border-color:var(--accent-dark);color:var(--accent-light);}
+  .icon-btn svg{width:18px;height:18px;fill:currentColor;}
+  .contact-list{display:grid;gap:14px;margin-top:20px;}
+  .contact-list li{display:flex;gap:14px;align-items:center;font-size:14px;}
+  .contact-list .k{font-family:var(--mono);font-size:10.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;width:70px;flex:none;}
+  .contact-list a{color:var(--text);border-bottom:1px solid transparent;}
+  .contact-list a:hover{border-color:var(--accent);color:var(--accent-light);}
+  .contact-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;}
+  .contact-card p{color:var(--text-2);font-size:13.5px;margin-bottom:18px;}
+
+  footer{border-top:1px solid var(--border);padding:22px 0;}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--text-muted);flex-wrap:wrap;gap:12px;}
+  .foot-social{display:flex;gap:16px;}
+  .foot-social a{color:var(--text-2);transition:color .15s;}
+  .foot-social a:hover{color:var(--accent-light);}
+
+  @media(max-width:900px){
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:200px;}
+    .hero h1{font-size:30px;}
+    .lead-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:600px){
+    .wrap,.navbar{padding:0 20px;}
+    section{padding:48px 0;}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
 </style>
-	
-<!-- /STYLES -->
-
-	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
-	
-	
-	<!-- /Linked in header -->
-	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-	
-	
 </head>
-
 <body>
 
-<!-- WRAPPER ALL -->
-<div class="arlo_tm_wrapper_all">
+<header>
+  <div class="navbar">
+    <a href="#home" class="brand">Taha Rizvi</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="navright">
+      <a class="cv-btn" href="img/cv/Taha's_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+  <div id="mobileNav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-	<div id="arlo_tm_popup_blog">
-		<div class="container">
-			<div class="inner_popup scrollable"></div>
-		</div>
-		<span class="close"><a href="#"></a></span>
-	</div>
-	
-	<!-- PRELOADER --
-	<div class="arlo_tm_preloader">
-		<div class="spinner_wrap">
-			<div class="spinner"></div>
-		</div>
-	</div>
-	<!-- /PRELOADER -->
-	
-	<!-- MOBILE MENU -->
-	<div class="arlo_tm_mobile_header_wrap">
-		<div class="main_wrap">
-			<div class="logo">
-				<img src="img/logo/mobile_logo.png" alt="" />
-			</div>
-			<div class="arlo_tm_trigger">
-				<div class="hamburger hamburger--collapse-r">
-					<div class="hamburger-box">
-						<div class="hamburger-inner"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="arlo_tm_mobile_menu_wrap">
-   			<div class="mob_menu">
-				<ul class="anchor_nav">
-					<li><a href="index.html#home">Home</a></li>
-					<li><a href="index.html#portfolio">Portfolio</a></li>
-					<li><a href="index.html#skills">Skills</a></li>
-					<li><a href="index.html#about">About</a></li>
-					<li><a href="index.html#education">Education</a></li>				
-					<li><a href="index.html#contact">Contact</a></li>
-					
-					<br><br>
-						<li><a href="img/cv/Taha's_CV.pdf" target="_blank"><span style="background-color:#788F9B;"><b>Download CV</b></span></a></li>
-					
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- /MOBILE MENU -->
-	
-    <!-- CONTENT -->
-	<div class="arlo_tm_content">
-		
-		<!-- LEFTPART -->
-		<div class="arlo_tm_leftpart_wrap">
-			<div class="leftpart_inner">
-				<div class="logo_wrap">
-					<a href="#"><img src="img/logo/desktop-logo.png" alt="" /></a>
-				</div>
-				<div class="menu_list_wrap">
-					<ul class="anchor_nav">
-					<li><a href="index.html#home">Home</a></li>
-					<li><a href="index.html#portfolio">Portfolio</a></li>
-					<li><a href="index.html#skills">Skills</a></li>
-					<li><a href="index.html#about">About</a></li>
-					<li><a href="index.html#education">Education</a></li>				
-					<li><a href="index.html#contact">Contact</a></li>
-						
-						<br><br>
-						<li><a href="img/cv/Taha's_CV.pdf" target="_blank"><span style="background-color:#788F9B;"><b>Download CV</b></span></a></li>
-						
-					</ul>
-					</div>
-					
-					
-											
-										
-					
-				
-				<div class="leftpart_bottom">
-					<div class="social_wrap">
-						<ul>
-							<li><a href="https://www.facebook.com/taha.hsn" target="_blank"><i class="xcon-facebook"></i></a></li>			
-							<li><a href="https://pk.linkedin.com/in/taha-rizvi" target="_blank"><i class="xcon-linkedin"></i></a></li>
-							<li><a href="https://github.com/taha110" target="_blank"><i class="fab fa-github"></i></a></li>
-							<li><a href="https://steamcommunity.com/id/T-Riz/" target="_blank"><i class="fab fa-steam "></i></a></li>
-							<li><a href="https://www.youtube.com/channel/UCb-6agWiEpo6WIYO1YL7_WA" target="_blank"><i class="fab fa-youtube"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<a class="arlo_tm_resize" href="#"><i class="xcon-angle-left"></i></a>
-			</div>
-		</div>
-		<!-- /LEFTPART -->
-		
-		<!-- RIGHTPART -->
-		<div class="arlo_tm_rightpart">
-			<div class="rightpart_inner">
-				<div class="arlo_tm_section" id="home">
-					<div class="arlo_tm_hero_header_wrap">
-						<div class="arlo_tm_universal_box_wrap">
-							<div class="bg_wrap">
-								<div class="overlay_image hero jarallax" data-speed="0.1"></div>
-								<div class="overlay_color hero"></div>
-							</div>
-							<div class="content hero">
-								<div class="inner_content">
-									<div class="image_wrap">
-										<img src="img/hero/img.jpg" alt="" />
-									</div>
-									<div class="name_holder">
-										<h3>Taha <span>Rizvi</span></h3>
-									</div>
-									<div class="text_typing">
-										<p>I'm a <span class="arlo_tm_animation_text_word"></span></p>
-									</div>
-								</div>
-							</div>
-							<div class="arlo_tm_arrow_wrap bounce anchor">
-								<a href="#portfolio"><i class="xcon-angle-double-down"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				
-				
-				<!-- PORTFOLIO -->
-				<div class="arlo_tm_section relative" id="portfolio">
-					<div class="arlo_tm_portfolio_wrapper_all">
+<main id="home">
 
-						<!-- PORTFOLIO FILTER -->
-						<div class="arlo_tm_second_portfolio">
-						<div class="container">
-							<div class="arlo_tm_portfolio_wrap">
-								<div class="arlo_tm_title_holder portfolio">
-									<h3>Portfolio</h3>
-									<span>Check out my latest creative work</span>
-								</div>
-								<div class="arlo_tm_portfolio_titles"></div>
-								<ul class="arlo_tm_portfolio_filter">
-									<li><a href="#" class="current" data-filter="*">All</a></li>
-									<li><a href="#" data-filter=".Virtual_Reality">Virtual Reality</a></li>
-									<li><a href="#" data-filter=".PC">PC</a></li>
-									<li><a href="#" data-filter=".Augmented_Reality">Augmented Reality</a></li>
-									<li><a href="#" data-filter=".Mobile">Mobile</a></li>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1><span class="role">Senior / Lead Unreal Engine Developer</span>Taha Rizvi</h1>
+        <p class="hero-desc">10+ years building games, interactive experiences and technical systems with Unreal Engine and C++ — currently building real-time broadcast tooling at Sportradar AG.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#experience">View Experience</a>
+          <a class="btn btn-outline" href="img/cv/Taha's_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Unreal Engine</span>
+          <span class="pill">C++</span>
+          <span class="pill">Gameplay</span>
+          <span class="pill">Tools</span>
+          <span class="pill">VR</span>
+          <span class="pill">Multiplayer</span>
+          <span class="pill">Optimization</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="accent-line"></div>
+        <div class="frame">
+          <img src="img/hero/img.jpg" alt="Taha Rizvi, Senior Unreal Engine Developer" width="400" height="400">
+        </div>
+      </div>
+    </div>
+  </section>
 
-								</ul>
-								<ul class="arlo_tm_portfolio_list gallery_zoom">
-									
-									<li class="PC Mobile">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="Virtual Football" data-category="PC">
-											<a href="project_SR_virtual_football.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/virtual-football-icon.jpg"></div>
-											</a>
-										</div>
-									</li>
+  <!-- CAREER SNAPSHOT -->
+  <div class="snapshot">
+    <div class="wrap snapshot-grid">
+      <div class="snap-item"><div class="num">10+</div><div class="label">Years Experience</div></div>
+      <div class="snap-item"><div class="num">C++ / UE5</div><div class="label">Core Stack</div></div>
+      <div class="snap-item"><div class="num">Editor Tools</div><div class="label">Workflow &amp; Automation</div></div>
+      <div class="snap-item"><div class="num">Scalable Systems</div><div class="label">Architecture</div></div>
+      <div class="snap-item"><div class="num">Technical Leadership</div><div class="label">Mentoring &amp; Ownership</div></div>
+    </div>
+  </div>
 
-									<li class="Virtual_Reality">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="RW1 IKA Project" data-category="Virtual_Reality">
-											<a href="project_rw1_ika.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/rw1_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
-									
-									<li class="Virtual_Reality PC">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="Area of Darkness: Sentinel" data-category="Virtual_Reality">
-											<a href="project_aod.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/aod_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">About</div>
+        <h2>Engineering profile</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>I'm a <strong>Senior Unreal Engine Developer</strong> with 10 years of experience building interactive applications, games and technical systems. My main focus is <strong>C++ and Unreal Engine</strong>, with experience spanning gameplay, tools, VR, multiplayer, optimization and developer workflows.</p>
+          <p>I enjoy solving technically difficult problems, building systems that improve development efficiency, and helping teams ship reliable software — currently applying that at Sportradar AG, building the editor tooling and automation behind live sports broadcast production.</p>
+        </div>
+        <div class="philosophy-grid">
+          <div><h4>Clean Architecture</h4><p>Design systems that stay maintainable as projects grow.</p></div>
+          <div><h4>Performance</h4><p>Profile first, identify bottlenecks, optimize on evidence.</p></div>
+          <div><h4>Tools</h4><p>Automate repetitive workflows to improve team productivity.</p></div>
+          <div><h4>Ownership</h4><p>Take responsibility for systems, not just individual tasks.</p></div>
+          <div><h4>Collaboration</h4><p>Work effectively with designers, artists and producers.</p></div>
+          <div><h4>Mentoring</h4><p>Help other developers grow technically and professionally.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-									<li class="Mobile">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="Globematcher" data-category="Mobile">
-											<a href="project_globematcher.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/globematcher_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
+  <!-- EXPERIENCE -->
+  <section id="experience" style="border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Experience</div>
+        <h2>Career timeline</h2>
+        <p>Ten years across broadcast technology, industrial VR and mobile live-service games.</p>
+      </div>
 
-									<li class="Virtual_Reality PC Mobile">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="UI Work" data-category="PC">
-											<a href="project_ui.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/sanrio_blast_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
+      <div class="role current">
+        <div class="role-head">
+          <div>
+            <div class="when">JUL 2023 — PRESENT</div>
+            <h3>Senior Unreal Developer</h3>
+            <div class="org">Sportradar AG</div>
+          </div>
+          <span class="tag-current">Current</span>
+        </div>
+        <div class="role-body">
+          <div class="role-block"><h4>Problem</h4><p>Live sports broadcast production relied on manual, repetitive workflows with no reusable Unreal Engine tooling for content generation.</p></div>
+          <div class="role-block"><h4>Contribution</h4><p>Built modular C++ editor tools and JSON-driven automation pipelines for real-time broadcast presentation — transitions, overlays, replays and overtime handling. Introduced SonarQube static analysis and mentor junior developers and technical artists.</p></div>
+          <div class="role-block"><h4>Impact</h4><p>Cut repetitive manual production work, improved code quality and long-term maintainability, and sped up iteration on live broadcast features.</p></div>
+          <div class="role-block"><h4>Ownership</h4><p>Contribute to architecture decisions and feature planning for Unreal Engine systems used across live production.</p></div>
+          <div class="role-block tech"><h4>Technology</h4>
+            <span>C++</span><span>Unreal Engine 5</span><span>Editor Tooling</span><span>Sequencer</span><span>MetaHuman</span><span>JSON</span><span>SonarQube</span>
+          </div>
+        </div>
+      </div>
 
+      <div class="role">
+        <div class="role-head">
+          <div>
+            <div class="when">APR 2021 — JUN 2023</div>
+            <h3>Unreal Engine Programmer</h3>
+            <div class="org">realworld one GmbH</div>
+          </div>
+        </div>
+        <div class="role-body">
+          <div class="role-block"><h4>Problem</h4><p>Industrial and pharmaceutical clients needed realistic multiplayer VR training with no existing reusable framework to build from.</p></div>
+          <div class="role-block"><h4>Contribution</h4><p>Architected modular gameplay systems and multiplayer VR training simulations, including a mirroring mode for collaborative learning; collaborated with designers, QA and product stakeholders through full production cycles.</p></div>
+          <div class="role-block"><h4>Impact</h4><p>Framework was reused across multiple VR projects; delivered reliable multiplayer training experiences for enterprise clients.</p></div>
+          <div class="role-block"><h4>Ownership</h4><p>Mentored junior developers on VR development practices.</p></div>
+          <div class="role-block tech"><h4>Technology</h4>
+            <span>Unreal Engine</span><span>C++</span><span>Multiplayer</span><span>UMG</span><span>VR</span>
+          </div>
+        </div>
+      </div>
 
-									<li class="Virtual_Reality PC">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="The Springers" data-category="Virtual_Reality">
-											<a href="project_springers.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/springers_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
-									<li class="PC">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="Real Time Strategy game" data-category="PC">
-											<a href="project_RTS.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/shards_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
-									
-									<li class="Augmented_Reality Mobile">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="ExperienceM" data-category="Augmented_Reality">
-											<a href="project_experienceM.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/experiencem_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
-									
-									
-									
-									<li class="Mobile">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="Rise of Empire" data-category="Mobile">
-											<a href="project_roe.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/roe_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
-								
-								
-								
-									
-									<li class="Mobile Augmented_Reality">
-										<div class="entry arlo_tm_portfolio_animation_wrap" data-title="More Projects" data-category="Mobile">
-											<a href="project_more.html">
-												<img src="img/portfolio/600x600.jpg" alt="" />
-												<div class="arlo_tm_portfolio_image_main" data-img-url="img/portfolio/more_icon.jpg"></div>
-											</a>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /PORTFOLIO FILTER -->
+      <div class="role">
+        <div class="role-head">
+          <div>
+            <div class="when">DEC 2019 — DEC 2020</div>
+            <h3>Gameplay Programmer</h3>
+            <div class="org">Bitbuu Games</div>
+          </div>
+        </div>
+        <div class="role-body">
+          <div class="role-block"><h4>Problem</h4><p>A mobile live-service title needed engaging, maintainable gameplay and progression systems on a tight production schedule.</p></div>
+          <div class="role-block"><h4>Contribution</h4><p>Built modular gameplay mechanics and progression systems, integrated GameSparks backend services, and delivered live-service UI — social login, push notifications, in-app purchases.</p></div>
+          <div class="role-block"><h4>Impact</h4><p>Shipped live-service features within an agile pipeline while keeping the codebase clean and maintainable.</p></div>
+          <div class="role-block"><h4>Ownership</h4><p>Collaborated closely with artists, designers and backend developers on a shared live title.</p></div>
+          <div class="role-block tech"><h4>Technology</h4>
+            <span>Unreal Engine</span><span>GameSparks</span><span>UI Systems</span><span>Agile</span>
+          </div>
+        </div>
+      </div>
 
-					</div>
-				</div>
-				<!-- /PORTFOLIO -->
-				
-				
-								
-				<!-- SKILLS -->
-				<div class="arlo_tm_section" id="skills">
-					<div class="arlo_tm_skills_wrap">
-						<div class="container">
-							<div class="inner_wrap">
-								<div class="leftbox">
-									<div class="arlo_tm_mini_title_holder">
-										<div class="arlo_tm_title_holder">
-											<h3>Skills</h3>
-											<span>Say HELLO to my skills</span>
-										</div>
-										
-									
-								
-									</div>
-								</div>
-					</div>
-				</div>
-				<!-- /SKILLS -->
-				
-				
-				
-				<!-- ABOUT SKILLS-->
-				<div class="arlo_tm_section" id="skills">
-					<div class="arlo_tm_about_wrapper_all">
-					<!--<div class="arlo_tm_about_wrapper_all">-->
+      <div class="role">
+        <div class="role-head">
+          <div>
+            <div class="when">FEB 2016 — NOV 2019</div>
+            <h3>VR/AR Gameplay Programmer</h3>
+            <div class="org">Rematch Studios</div>
+          </div>
+        </div>
+        <div class="role-body">
+          <div class="role-block"><h4>Problem</h4><p>A narrative VR FPS needed immersive full-body interaction and reliable multiplayer session handling.</p></div>
+          <div class="role-block"><h4>Contribution</h4><p>Developed a full-body VR character system with inverse kinematics, AWS-based multiplayer matchmaking, and save/load systems; managed Perforce workflows and supported technical artists.</p></div>
+          <div class="role-block"><h4>Impact</h4><p>Shipped immersive VR interactions across Rift, Vive and Steam, with robust progression persistence.</p></div>
+          <div class="role-block"><h4>Ownership</h4><p>Contributed to gameplay architecture, debugging and overall system maintainability.</p></div>
+          <div class="role-block tech"><h4>Technology</h4>
+            <span>Unreal Engine</span><span>C++</span><span>IK</span><span>AWS</span><span>Perforce</span>
+          </div>
+        </div>
+      </div>
 
-						<div class="container">
-							
-							<div class="arlo_tm_about_wrap">
-								<div class="inner_wrap">
-									
-									<div class="">
-										
-										
-										
-										<br>
+    </div>
+  </section>
 
-										<div class="buttons_wrap">
-											<ul>
-												<li>
-													<a target="_blank"><span>Unreal Engine</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>C++</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Blueprints</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Unreal Editor Tools</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Unreal Plugins</span></a>
-												</li>
-												
-												
-											</ul>
-										</div>	
-										<div class="buttons_wrap">
-											<ul>
-												<li>
-													<a target="_blank"><span>Game Optimization</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Multiplayer</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Git</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Perforce</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>VR Development</span></a>
-												</li>
-												
-												
-											</ul>
-										</div>	
-										<div class="buttons_wrap">
-											<ul>
-												<li>
-													<a target="_blank"><span>Game Physics</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>SonarQube</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>JIRA</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Agile Methodologies</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Game Mathematics</span></a>
-												</li>
-												
-												
-											</ul>
-										</div>	
-										<div class="buttons_wrap">
-											<ul>
-												<li>
-													<a target="_blank"><span>Gameplay Programming</span></a>
-												</li>
+  <!-- PROJECTS -->
+  <section id="projects" style="border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Selected Projects</div>
+        <h2>Technical portfolio</h2>
+        <p>Shipped work across broadcast tooling, VR and mobile. Click a project for full detail.</p>
+      </div>
+      <div class="proj-grid" id="projGrid"></div>
+    </div>
+  </section>
 
-												<li>
-													<a target="_blank"><span>Unity Game Engine</span></a>
-												</li>
+  <!-- SKILLS & EXPERTISE (merged) -->
+  <section id="skills" style="border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Skills &amp; Expertise</div>
+        <h2>Technical toolkit</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="sk-panel">
+          <h3>Unreal Engine</h3>
+          <ul>
+            <li>UE4 / UE5</li>
+            <li>C++ &amp; Blueprints</li>
+            <li>Gameplay Framework</li>
+            <li>Editor Extensions &amp; Plugins</li>
+            <li>Sequencer / MetaHuman</li>
+          </ul>
+        </div>
+        <div class="sk-panel">
+          <h3>Programming</h3>
+          <ul>
+            <li>C++ / C#</li>
+            <li>Object-Oriented Design</li>
+            <li>Systems Programming</li>
+            <li>Debugging &amp; Profiling</li>
+            <li>Architecture &amp; Optimization</li>
+          </ul>
+        </div>
+        <div class="sk-panel">
+          <h3>Systems &amp; Multiplayer</h3>
+          <ul>
+            <li>Networking</li>
+            <li>Multiplayer Gameplay</li>
+            <li>Server Architecture</li>
+            <li>AWS Matchmaking</li>
+          </ul>
+        </div>
+        <div class="sk-panel">
+          <h3>XR / VR</h3>
+          <ul>
+            <li>Oculus Rift</li>
+            <li>HTC Vive</li>
+            <li>VR Interaction</li>
+            <li>VR Gameplay</li>
+          </ul>
+        </div>
+        <div class="sk-panel">
+          <h3>Tools &amp; Workflow</h3>
+          <ul>
+            <li>Unreal Editor Tools</li>
+            <li>JSON Automation</li>
+            <li>SonarQube</li>
+            <li>Perforce / Git</li>
+            <li>CI/CD</li>
+          </ul>
+        </div>
+        <div class="sk-panel">
+          <h3>Secondary</h3>
+          <ul>
+            <li>Unity Engine</li>
+            <li>UMG</li>
+            <li>GameSparks</li>
+            <li>Visual Studio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-												<li>
-													<a target="_blank"><span>UI Animations</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Game Lift</span></a>
-												</li>
-												<li>
-													<a target="_blank"><span>Tech Art</span></a>
-												</li>
-												
-												
-											</ul>
-										</div>	
+  <!-- LEADERSHIP -->
+  <section style="border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Engineering Beyond Code</div>
+        <h2>Technical leadership</h2>
+      </div>
+      <div class="lead-grid">
+        <div class="lead-card"><h4>Mentoring</h4><p>Guiding junior developers and technical artists through code review and debugging support.</p></div>
+        <div class="lead-card"><h4>Technical ownership</h4><p>Owning systems end-to-end rather than individual tasks.</p></div>
+        <div class="lead-card"><h4>Code reviews</h4><p>Raising code quality through review and static analysis workflows.</p></div>
+        <div class="lead-card"><h4>Architecture discussions</h4><p>Contributing to decisions on structure, scope and maintainability.</p></div>
+        <div class="lead-card"><h4>Tool development</h4><p>Building editor tools that remove repetitive manual work for a team.</p></div>
+        <div class="lead-card"><h4>Cross-team collaboration</h4><p>Working closely with design, art, QA and production.</p></div>
+        <div class="lead-card"><h4>Workflow improvement</h4><p>Automating pipelines to increase production flexibility.</p></div>
+        <div class="lead-card"><h4>Technical decision making</h4><p>Weighing performance, scope and long-term maintainability trade-offs.</p></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CONTACT -->
+  <section id="contact" style="border-top:1px solid var(--border);">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2 style="font-size:24px;margin-bottom:12px;">Let's connect!</h2>
+        <p style="color:var(--text-2);max-width:440px;">Open to Senior and Lead Unreal Engine roles and Technical Lead positions.</p>
+        <ul class="contact-list">
+          <li><span class="k">Email</span><a href="mailto:taha.hassan110@gmail.com">taha.hassan110@gmail.com</a></li>
+          <li><span class="k">Location</span><span style="color:var(--text-2);">Düsseldorf, Germany</span></li>
+          <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/taha-rizvi/" target="_blank" rel="noopener">/in/taha-rizvi</a></li>
+          <li><span class="k">GitHub</span><a href="https://github.com/taha110" target="_blank" rel="noopener">github.com/taha110</a></li>
+        </ul>
+      </div>
+      <div class="contact-card">
+        <a class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:10px;" href="mailto:taha.hassan110@gmail.com">Email me</a>
+        <a class="btn btn-outline" style="width:100%;justify-content:center;" href="img/cv/Taha's_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        <div class="icon-row" style="justify-content:center;margin-top:18px;">
+          <a class="icon-btn" href="mailto:taha.hassan110@gmail.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 0l8 6 8-6H4zm16 2.4-8 6-8-6V18h16V8.4z"/></svg>
+          </a>
+          <a class="icon-btn" href="https://www.linkedin.com/in/taha-rizvi/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.2 8.75h3.6V21H3.2V8.75zm6.4 0h3.45v1.68h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.33 2.4 4.33 5.53V21h-3.6v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21h-3.6V8.75z"/></svg>
+          </a>
+          <a class="icon-btn" href="https://github.com/taha110" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /ABOUT SKILLS -->
-				
-				
-				<!-- ABOUT -->
-				<div class="arlo_tm_section relative" id="about">
-					<div class="arlo_tm_about_wrapper_all">
-						<div class="container">
-							<div class="arlo_tm_title_holder">
-								<h3>About Me</h3>
-								<span>Main information about me</span>
-							</div>
-							<div class="arlo_tm_about_wrap">
-								<div class="author_wrap">
-									<div class="leftbox">
-										<div class="about_image_wrap parallax" data-relative-input="true">
-											<div class="image layer" data-depth="0.1">
-												<img src="img/about/550x640.jpg" alt="" />
-												<div class="inner" data-img-url="img/about/1.jpg"></div>
-											</div>
-											<div class="border layer" data-depth="0.2">
-												<img src="img/about/550x640.jpg" alt="" />
-												<div class="inner"></div>
-											</div>
-										</div>
+</main>
 
-									</div>
-									<div class="rightbox">
-										<div class="arlo_tm_mini_title_holder">
-											<h4>I'm Taha Rizvi and <span class="arlo_tm_animation_text_word"></span></h4>
-										</div>
-										<div class="definition">
-											<p>Hi !  My name is <strong>Taha Rizvi</strong>, I'm a gamer, tech enthusiast and a game developer. Having 8+ years of experience, proficient in creating content on Unreal Engine using C++ and blueprints.
-											I possess a proven ability to collaborate effectively within teams, proactively take initiatives, and solve complex problems to ensure the team's success. I strongly value soft skills as much as technical expertise. Consequently, I have cultivated myself as a strong team player with natural instincts for patience and effective communication.</p>
-										</div>
-										<div class="about_short_contact_wrap">
-											<ul>
-												
-												<li>
-													<span><label>Location:</label> Germany</span>
-												</li>
-												<li>
-													<span><label>Interests:</label> Gaming, Table tennis</span>
-												</li>
-												<li>
-													<span><label>University:</label> IBA Karachi </span>
-												</li>
-												<li>
-													<span><label>Degree:</label> MS (Computer Science)</span>
-												</li>	
-												
-												<li>
-													<span><label>Mail:</label> <a href="mailto:taha.hassan110@gmail.com">taha.hassan110&#64;gmail.com</a></span>
-												</li>
-												<li>
-													<span><label>Phone:</label> <a href="#">+49-176-46735728</a></span>
-												</li>
-												
-											</ul>
-										</div>
-										<div class="buttons_wrap">
-											<ul>
-												<li>
-													<a href="img/cv/Taha's_CV.pdf" target="_blank"><span>Download CV</span></a>
-												</li>
-												
-											</ul>
-										</div>
+<footer>
+  <div class="wrap foot-row">
+    <span>© 2026 Taha Rizvi.</span>
+    <div class="foot-social">
+      <a href="https://github.com/taha110" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/taha-rizvi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:taha.hassan110@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
 
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /ABOUT -->
-				
-				<!-- Education -->
-				<div class="arlo_tm_section" id="education">
-					<div class="arlo_tm_skills_wrap">
-						<div class="container">
-							<div class="inner_wrap">
-									<div class="arlo_tm_mini_title_holder">
-										<div class="arlo_tm_title_holder">
-								<h3>Education</h3>
-								<span>Educational background</span>
-									
-										<br><br>
-									<p>
-									<b>Masters</b> in Computer science from IBA Karachi</p><br>
-											
-											
-									<table id="customers">
-  									
-  									<tr>
-   	 								<td>Software project management</td>
-    								<td>Usability engineering</td>
-									<td>Advanced Algorithms</td>
-  									</tr>
-										
-									
-										
-									<tr>
-									<td>Advanced human computer interaction</td>
-   	 								<td>Advanced data warehousing</td>
-    								<td>Requirements Engineering</td> 
-  									</tr>
-										
-									</table>
-											
-									
-   	 								<p><b>Research work:</b></p> <p>Artificial Intelligence techniques used in competitive games      (on-going)</p>
-  									
-  
-									
+<script>
+  const projects = [
+    {
+      cat: "sports", catLabel: "Sports Augmentation",
+      title: "Augmented Tennis",
+      org: "Personal / Freelance",
+      desc: "Real-time animation and UI spawning driven by live match data.",
+      tech: ["UE5","C++","Python","Computer Vision"],
+      href: "project_SR_augmented_tennis.html"
+    },
+    {
+      cat: "tools", catLabel: "Tools / Broadcast",
+      title: "Virtual Football",
+      org: "Sportradar AG",
+      desc: "Large-scale UE5 broadcast system generating live sports content at scale.",
+      tech: ["UE5","C++","Sequencer","MetaHuman","JSON"],
+      href: "project_SR_virtual_football.html"
+    },
+    {
+      cat: "vr", catLabel: "VR",
+      title: "VR Industrial Training",
+      org: "realworld one GmbH",
+      desc: "Multiplayer VR training for industrial and pharmaceutical workflows.",
+      tech: ["Unreal Engine","C++","Multiplayer","UMG","VR"],
+      href: "project_rw1_ika.html"
+    },
+    {
+      cat: "vr", catLabel: "VR",
+      title: "Area of Darkness VR",
+      org: "Rematch Studios",
+      desc: "Narrative-driven VR FPS adventure with full-body IK.",
+      tech: ["Unreal Engine","C++","Rift","Vive","IK","QTEs"],
+      href: "project_aod.html"
+    }
+  ];
 
-											
-								<br><br>
-									<p>
-									<b>Bachelors</b> in Computer science from IBA Karachi.          <b><mark>-  (Gold Medalist)</mark></b> </p><br>
-											
-											
-									<table id="customers1">
-  									
-  									<tr>
-   	 								<td>Mathematics in games</td>
-    								<td>Modeling and Simulation</td> 
-									<td>Object oriented programming</td>
-  									</tr>
-										
-									<tr>
-   	 								
-    								<td>Data Structures</td>
-									<td>Mobile Application Development</td>
-									<td>Artificial Intelligence</td>
-  									</tr>
-										
-									
-										
-									<tr>
-   	 								<td>Software  Engineering</td>
-    								<td>Data Mining</td> 
-  									</tr>
-  
-									</table>
-											
-								</div>
-								
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Education -->
-				
-				
+  const grid = document.getElementById('projGrid');
+  projects.forEach((p)=>{
+    const a = document.createElement('a');
+    a.className = 'p-card';
+    a.href = p.href;
+    a.innerHTML = `
+      <div class="p-card-top"><span class="p-cat">${p.catLabel}</span></div>
+      <h3>${p.title}</h3>
+      <p class="desc">${p.desc}</p>
+      <div class="tags">${p.tech.slice(0,4).map(t=>`<span>${t}</span>`).join('')}</div>
+      <div class="view">View project →</div>
+    `;
+    grid.appendChild(a);
+  });
 
-				
-				<!-- TESTIMONIALS -->
-				<div class="arlo_tm_section" id="testimonials">
-					<div class="arlo_tm_testimonials_wrapper_all">
-						<div class="arlo_tm_universal_box_wrap">
-							<div class="bg_wrap">
-								<div class="overlay_image testimonial jarallax" data-speed="0"></div>
-								<div class="overlay_color testimonial"></div>
-							</div>
-							<div class="content testimonial">
-								<div class="arlo_tm_testimonial_wrap">
-									<div class="container">
-										<div class="carousel_wrap">
-											<ul class="owl-carousel">
-												<li class="item">
-													<div class="inner">
-														<div class="quotebox_wrap">
-															<i class="xcon-quote-left"></i>
-														</div>
-														<div class="definitions_wrap">
-															<p>“Solution oriented and high customer service. Great understanding and service minded”</p>
-														</div>
-														<div class="name_holder">
-															<p>Nilsmarius1, Client</p>
-														</div>
-													</div>
-												</li>
-												<li class="item">
-													<div class="inner">
-														<div class="quotebox_wrap">
-															<i class="xcon-quote-left"></i>
-														</div>
-														<div class="definitions_wrap">
-															<p>“Best Game Developer available on Fiverr ! the give result beyond satisfaction, .. i dont mind always coming for more job..”</p>
-														</div>
-														<div class="name_holder">
-															<p>Sammyade, CEO Skynet Nigeria, Client </p>
-														</div>
-													</div>
-												</li>
-												
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /TESTIMONIALS -->
-				
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  menuToggle.addEventListener('click', ()=>{
+    const open = mobileNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    mobileNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+  }));
 
-				<br><br><br><br><br>	
-
-				<!-- CONTACT & FOOTER -->
-				<div class="arlo_tm_section" id="contact">
-					<div class="container">
-
-						<br><br><br><br><br>	
-						
-						<div class="arlo_tm_title_holder contact">
-							
-							<h3>Contact Me</h3>
-							<span>Get in touch with me</span><br><br>
-							I’d love to chat about job opportunities, projects I’ve worked on, latest tech, gaming,  memes, or whatever is on your mind.
-						</div>
-					</div>
-					
-					
-					<div class="arlo_tm_footer_contact_wrapper_all">
-						<div class="arlo_tm_contact_wrap_all">
-							
-							<div class="container">
-								<div class="leftbox">
-									
-									<div class="short_info_wrap">
-										<ul>
-											<li><p><label>Address:</label><span>Germany</span></p></li>
-											<li><p><label>Email:</label><span><a href="mailto:taha.hassan110@gmail.com">taha.hassan110@gmail.com</a></span></p></li>
-											<li><p><label>Phone:</label><span>+49-176-46735728</span></p></li>
-											<!-- <li><p><label>Facebook:</label><span> <a href="https://www.facebook.com/taha.hsn" target="_blank">taha.hsn</a></span></p></li> -->
-										<!--	<li><p><label>LinkedIn:</label><a href="https://pk.linkedin.com/in/taha-rizvi" target="_blank"> taha-rizvi </a>  </p></li> -->
-											<li><p><label>Steam:</label><span><a href="https://steamcommunity.com/id/T-Riz/" target="_blank"> T-Riz</a> </span></p></li>
-										</ul>
-										
-									</div>
-								</div> 
-								<div class="rightbox">
-									
-										<div class="short_info_wrap">
-											<ul>
-												
-											<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="taha-rizvi"><a class="LI-simple-link" href="https://pk.linkedin.com/in/taha-rizvi?trk=profile-badge">Taha Rizvi</a></div>
-										</ul>
-											
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="arlo_tm_footer_wrap">
-							<div class="container">
-								<p>&copy; Copyright 2024. All Rights are Reserved.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /CONTACT & FOOTER -->
-				
-			</div>
-		</div>
-		<!-- /RIGHTPART -->
-		
-		<a class="arlo_tm_totop" href="#"></a> 
-		
-	</div>
-</div>
-<!-- / WRAPPER ALL -->
-	
-<!-- SCRIPTS -->
-<script src="js/jquery.js"></script>
-<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->	
-<script src="js/plugins.js"></script>
-<script src="js/init.js"></script>
-<!-- /SCRIPTS -->
+  const navLinks = document.querySelectorAll('nav.primary-nav a');
+  const sections = ['about','experience','projects','skills','contact'].map(id=>document.getElementById(id));
+  const spy = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#'+entry.target.id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => s && spy.observe(s));
+</script>
 
 </body>
-
-<!-- Mirrored from frenify.com/envato/marketify/html/arlo/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2019 16:19:55 GMT -->
 </html>
